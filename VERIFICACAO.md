@@ -1,43 +1,49 @@
-# Verificação — 7 de novembro de 2026
+# Verificação da nova Hero Prisma — 8 de novembro de 2026
 
-- Compilação de produção Next.js e checagem de TypeScript: concluídas com sucesso.
-- Página inicial servida no navegador local, assets presentes e sem erros ou avisos de console durante a revisão.
-- Inspeção visual do desktop em 1440 px e mobile em 390 e 320 px; verificação de ausência de transbordamento horizontal também em 768 px.
-- Encontrado e corrigido transbordamento do título da galeria e de uma linha de serviço em 320 px. Após a correção, a largura do documento ficou dentro da viewport.
-- Menu mobile: abertura e fechamento ao selecionar navegação verificados; atributo `aria-expanded` mudou de `true` para `false`.
-- Demonstração de projeto: abertura, nome acessível, fechamento com Escape e retorno de foco ao botão acionador verificados.
-- Serviço: expansão e exibição do conteúdo verificadas.
-- Navegação entre âncoras e retorno ao topo verificados.
-- URL do WhatsApp inspecionada: número e mensagem preenchida correspondem ao briefing. Nenhuma mensagem foi enviada. A abertura no aplicativo WhatsApp de um celular físico não foi testada.
-- Fontes locais e ilustrações incluídas. Não houve teste de leitor de tela, iPhone físico, auditoria completa WCAG ou medição de Core Web Vitals.
-- Movimento reduzido implementado em CSS; preferência do sistema não foi alterada para testes.
+- Substituição integral do Glyph Portal e do cabeçalho anterior; as outras seções foram preservadas.
+- Estrutura TypeScript, Tailwind 4 e alias shadcn `@/components/ui` existentes e mantidos.
+- Dependências Framer Motion e Lucide React instaladas com lockfile.
+- `pnpm typecheck` e `pnpm build`: aprovados.
+- `pnpm audit --prod`: nenhuma vulnerabilidade conhecida encontrada.
+- Revisão da hero no navegador em 1440, 768, 390, 375 e 320 px: sem transbordamento horizontal; navegação com cinco destinos existentes; alvos mobile de 44 px.
+- Vídeo reproduzido no navegador e botão de pausa verificado, incluindo mudança do nome acessível para reproduzir.
+- Âncora Serviços acionada; URL do WhatsApp revisada, sem envio de mensagem.
+- Vídeo original de 16.092.112 bytes otimizado para 870.516 bytes; poster local de 96.931 bytes. Mesmo conteúdo visual fornecido no briefing.
+- Texto sem estado inicial oculto no HTML do servidor. Preferência de movimento reduzido e economia de dados desativam autoplay; listeners removidos na desmontagem.
+- Preferência do sistema revisada no código, sem emulação no navegador. Não houve teste em dispositivo físico, leitor de tela ou medição de Core Web Vitals.
+- Esta entrega altera os arquivos locais; publicação não executada nesta etapa.
 
-Os exemplos são demonstrações, e a marca textual é provisória porque nenhuma das duas imagens citadas no briefing foi recebida. Nenhum projeto, cliente, resultado ou premiação foi inventado.
+## Barra fixa e painel Explorar
 
-## Atualização da hero — Glyph Portal
+- TypeScript e build de produção: aprovados após integração.
+- Inspeção em 320, 375, 768, 1024 e 1440 px: sem overflow horizontal.
+- Estado expanded, abertura do painel, fechamento por Escape e retorno do foco confirmados.
+- Fechamento por clique fora e por seleção de link confirmados.
+- Navegação até Projetos confirmada; cabeçalho mantém position fixed durante rolagem.
+- Links no painel em 320 px com altura de 44 px. Painel com overflow auto e altura limitada.
+- Console da aba revisada sem erros ou avisos capturados.
+- Movimento reduzido implementado e revisado no código; preferência do sistema não emulada.
+- Publicação externa não executada.
 
-- Build de produção e TypeScript aprovados após integração do código fornecido.
-- Zoom confirmado no navegador: progresso de 0 para aproximadamente 0,40 e, ao continuar a rolagem, 1; galeria com opacidade 1 e estado de entrada concluído.
-- Seleção por seta do teclado mudou a letra ativa de M para S.
-- Enquadramento inspecionado em 1440 px e mobile em 390 e 320 px, sem transbordamento horizontal.
-- Acesso direto aos projetos por Enter e por clique confirmado, com âncora, foco no conteúdo de destino e galeria revelada. Foi corrigido o desaparecimento do CTA durante o enquadramento automático; o botão agora permanece disponível durante o zoom.
-- Versão estática em tela de 740 × 480 px confirmada, sem transbordamento.
-- A preferência de movimento reduzido está implementada pela mesma alternativa estática; não foi alterada a preferência do sistema para emular essa condição.
-- Não houve teste em iPhone físico nem medição de taxa de quadros.
+## Correção de fade-in — 8 de novembro de 2026
 
+- TypeScript e build de produção aprovados.
+- Título de contato fora da viewport: opacity 0, deslocamento de 20 px e estado ainda não revelado.
+- Após entrar: estado visible e opacity 1. Após sair e voltar: estado visible e opacity 1 preservados.
+- Colunas do menu mantêm o estado visible ao fechar e reabrir.
+- Hero com quatro elementos revelados e transition-duration de 0.7s.
+- Console sem erros ou avisos capturados na aba revisada.
+- CSS reduced-motion e fallback noscript revisados no código. Preferência do sistema e JavaScript desativado não foram emulados no navegador.
+- Não houve medição de FPS ou Core Web Vitals. Sem publicação externa nesta etapa.
 
-## Fade dos textos principais
+## Carrossel de projetos — 8 de novembro de 2026
 
-- Build de produção e TypeScript aprovados.
-- Sete grupos de texto selecionados confirmados no DOM, mantendo títulos semânticos e texto legível no estado final.
-- Seção Sobre revisada no navegador; sem transbordamento horizontal nem avisos ou erros de console.
-- Animação usa somente opacidade. A versão sem movimento e a sincronização com o portal foram implementadas; não houve emulação da preferência de movimento reduzido.
-
-
-Ajuste de ritmo: fade ampliado de 680 ms para 1.800 ms, com curva simétrica que evita a aparição rápida no início. Intervalo do apoio da hero ampliado de 120 ms para 260 ms.
-
-
-## Projetos reais adicionados
-
-Quatro projetos fornecidos pelo usuário: Essência Country & Casual, Sensação do Açaí, AMC Cama, Mesa & Banho e NovaAçaí. URLs preservadas, sem anos inventados. Imagens reais salvas localmente, textos alternativos atualizados e avisos de demonstração removidos. A grade desktop apresenta dois projetos amplos e dois intermediários. A tentativa de revisão final no navegador sofreu timeouts; não confundir as capturas dos sites de origem com revisão visual completa da nova galeria.
-
+- TypeScript e build de produção aprovados.
+- Comparação automática das expressões className com o arquivo recebido: todas preservadas.
+- Projeto anterior, próximo, indicador 3, Home, End e retorno circular 4 → 1 e 1 → 4 verificados no navegador.
+- Imagens e links dos slides Sensação do Açaí e NovaAçaí inspecionados; primeiro slide Essência revisado visualmente.
+- Imagem com altura computada 384 px, object-fit cover e filtro grayscale(1); título com 24 px, sem herdar o tamanho do título da seção.
+- Sem overflow horizontal em 320, 390, 768 e 1440 px.
+- Console sem erros ou avisos capturados.
+- Classes, estrutura de controles e lógica originais preservadas; não houve auditoria completa dos papéis ARIA do componente fornecido. Preferência de movimento reduzido não emulada.
+- Publicação externa não executada nesta etapa.
