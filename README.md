@@ -1,6 +1,6 @@
 # MSX CODE
 
-Portfólio editorial em Next.js App Router, React, TypeScript e Tailwind CSS 4, com composição personalizada em CSS. Entrega local; nenhum serviço foi publicado.
+Portfólio editorial em Next.js App Router, React, TypeScript e Tailwind CSS 4, com composição personalizada em CSS. Configurado para publicação na Vercel com o adaptador nativo do Next.js.
 
 ## Executar
 
@@ -11,14 +11,14 @@ pnpm install
 pnpm dev
 ```
 
-Abra http://127.0.0.1:3000. Para verificar e gerar a versão estática:
+Abra http://127.0.0.1:3000. Para verificar e gerar a versão de produção:
 
 ```sh
 pnpm typecheck
 pnpm build
 ```
 
-O resultado está em `out/`. Publique o conteúdo dessa pasta em um servidor de arquivos estáticos, com a pasta como raiz. Não abra `out/index.html` por `file://`: os assets usam caminhos a partir da raiz do site. Exportação conforme a [documentação oficial do Next.js](https://nextjs.org/docs/app/guides/static-exports).
+O resultado está em `.next/`. Execute `pnpm start` para testar a versão de produção. Na Vercel, importe este repositório com Root Directory `./`; o arquivo `vercel.json` fixa o framework `nextjs`, o comando `pnpm run build` e a saída `.next`. A exportação `output: export` foi removida para usar o adaptador nativo da plataforma. Veja a [documentação oficial de deploy do Next.js](https://nextjs.org/docs/app/getting-started/deploying).
 
 ## Atualizar conteúdo
 
@@ -62,6 +62,7 @@ Adaptações ao componente original: rótulos em português, espaços excluídos
 ## Fade dos textos principais
 
 O componente src/components/text-reveal.tsx aplica um fade de opacidade de 1.800 ms, uma vez por entrada inicial, nos sete grupos de texto selecionados. A chamada da hero recebe um pequeno intervalo entre título e apoio. A galeria espera a conclusão do portal; títulos de Sobre, Serviços e Contato entram ao aparecer na tela. Não há deslocamento, efeito por letra ou animação nos itens de serviço, projetos e rodapé. Com movimento reduzido, os fades não executam; sem JavaScript, o conteúdo continua visível.
+
 
 
 
