@@ -1,0 +1,51 @@
+/* The supplied portal handles measured glyph geometry; this file owns MSX art direction. */
+.msx-portal, .msx-portal-poster { background: #080808; color: #f5f5f3; }
+.msx-portal [data-gp-content] { padding: 0; display: block; min-height: 0; overflow-wrap: normal; }
+.msx-portal [data-gp-content] .work { background: #f5f5f3; }
+.msx-portal [data-gp-caption] { inset: auto var(--gutter) 132px; padding-top: 18px; font-family: Manrope, Arial, sans-serif; opacity: 1; pointer-events: auto; }
+.msx-portal [data-gp-caption]::before { content: ''; position: absolute; inset: 0 0 auto; height: 1px; background: #393939; opacity: var(--gp-caption, 1); }
+/* Keep the skip action usable while the camera moves through the glyph. */
+.msx-portal [data-gp-enter] { gap: 24px; font-size: 13px; background: #080808; color: #f5f5f3; padding: 0 14px; border: 1px solid #666; }
+.msx-portal [data-gp-hint] { color: #aaa; font-size: 12px; opacity: var(--gp-caption, 1); }
+.msx-portal [data-gp-letter]:focus-visible { outline-color: #f5f5f3; }
+.msx-portal [data-gp-touch-picker] { top: auto; bottom: 90px; left: var(--gutter); transform: none; }
+.msx-portal [data-gp-select] { border: 1px solid #666; border-radius: 0; font-family: Manrope, Arial, sans-serif; }
+.portal-scene { position: absolute; inset: 0; background: #f5f5f3; }
+.portal-intro { position: absolute; inset: 36px var(--gutter) auto; display: flex; justify-content: space-between; gap: 25px; color: #b4b4b0; font-size: 12px; line-height: 1.7; }
+.portal-message { position: absolute; inset: calc(var(--gp-word-bottom, 54%) + 52px) var(--gutter) auto; display: grid; grid-template-columns: 1.5fr 1fr; gap: 70px; }
+.portal-message h1 { font-family: Space, Arial, sans-serif; font-size: clamp(24px, 2.7vw, 40px); font-weight: 400; letter-spacing: -.045em; line-height: 1.17; }
+.portal-message p { color: #b4b4b0; font-size: 14px; line-height: 1.8; max-width: 360px; margin-bottom: 22px; }
+.portal-message .text-link { font-size: 13px; }
+.portal-poster { min-height: 780px; height: calc(100svh - 112px); position: relative; }
+.portal-poster-word { position: absolute; inset: 30% var(--gutter) auto; text-align: center; font: 700 14vw/.9 Space, Arial, sans-serif; letter-spacing: -.055em; }
+.portal-poster .portal-message { top: 58%; }
+.poster-explore { position: absolute; bottom: 35px; right: var(--gutter); display: flex; gap: 20px; align-items: center; font-size: 13px; }
+.msx-portal [data-gp-motion=off] { color: inherit; }
+@media (max-width: 1000px) {
+  .portal-message { gap: 35px; grid-template-columns: 1.1fr 1fr; }
+  .portal-message h1 { font-size: 28px; }
+  .portal-message p { font-size: 13px; }
+}
+@media (max-width: 640px) {
+  .portal-intro { top: 26px; font-size: 11px; }
+  .portal-intro > span:last-child { display: none; }
+  .portal-message { top: calc(var(--gp-word-bottom, 47%) + 42px); display: block; }
+  .portal-message h1 { font-size: clamp(22px, 6vw, 28px); max-width: 340px; line-height: 1.2; }
+  .portal-message p { font-size: 12px; line-height: 1.8; margin: 20px 0 17px; max-width: 330px; }
+  .portal-message .text-link { font-size: 12px; }
+  .msx-portal [data-gp-caption] { bottom: 105px; padding-top: 10px; gap: 15px; }
+  .msx-portal [data-gp-hint] { font-size: 10px; max-width: 100px; }
+  .msx-portal [data-gp-enter] { font-size: 11px; gap: 12px; }
+  .msx-portal [data-gp-touch-picker] { bottom: auto; top: 74px; }
+  .msx-portal [data-gp-select] { font-size: 11px; min-height: 40px; }
+  .portal-poster { height: calc(100svh - 85px); min-height: 670px; }
+  .portal-poster-word { top: 32%; font-size: 14vw; }
+  .portal-poster .portal-message { top: 48%; }
+}
+@media (max-height: 650px) and (min-width: 641px) {
+  .portal-intro { top: 20px; }
+  .portal-message { top: calc(var(--gp-word-bottom, 54%) + 24px); }
+  .portal-message h1 { font-size: 25px; }
+  .portal-message p { font-size: 12px; margin-bottom: 10px; }
+  .msx-portal [data-gp-caption] { bottom: 15px; padding-top: 10px; }
+}
