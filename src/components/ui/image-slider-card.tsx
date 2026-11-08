@@ -122,7 +122,7 @@ export function ImageSliderCard() {
               duration: shouldReduceMotion ? 0 : 0.35,
               ease: "easeInOut",
             }}
-            className="absolute w-full h-full object-cover grayscale focus-visible:outline-none transition-opacity"
+            className="absolute w-full h-full object-cover saturate-[1.15] contrast-[1.04] focus-visible:outline-none transition-opacity"
             alt={slides[currentIndex]?.title}
             role="img"
             aria-describedby={descriptionId}

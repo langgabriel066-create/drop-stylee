@@ -86,3 +86,7 @@ Todas as expressões className do componente fornecido foram preservadas, inclui
 Os tokens semânticos card, background, foreground, border, muted, muted-foreground, primary e ring foram mapeados para a paleta existente no @theme inline do Tailwind 4. Os resets de imagens e margens de títulos passaram à camada base para não sobrescrever utilities do arquivo fornecido. O título principal da seção usa seletor específico para não alterar o h2 do slide. O wrapper project-slider apenas centraliza o componente e define o espaçamento externo.
 
 Framer Motion e Lucide React já estavam instalados: nenhuma dependência nova ou alteração de lockfile. O diff em ../image-slider-card.diff destaca adaptações ao arquivo original.
+
+## Cores das capas
+
+Após a integração do componente original, o filtro grayscale foi removido por solicitação do usuário. Todas as capas usam saturate(1.15) e contrast(1.04), mantendo as cores originais com um realce moderado. As imagens não foram reexportadas; dimensões, carrossel e navegação permanecem iguais.
